@@ -1,0 +1,105 @@
+.people {
+  padding: 57px 25px 2px;
+  @media screen and (min-width: 481px) {
+    padding: 85px 10px 2px;
+  }
+  @media screen and (min-width: 993px) {
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  &__bgi {
+    background: #4A3B4E url("../../img/People_Are_Talking_about_fork/people_background.png") 50% 0 no-repeat;
+  }
+  &__title {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 2.25em;
+    text-align: center;
+    margin-bottom: 53px;
+    color: #FFFFFF;
+    @media screen and (min-width: 481px) {
+      margin-bottom: 88px;
+    }
+    @media screen and (min-width: 993px) {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__container {
+    @media screen and (min-width: 481px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__post {
+    margin-bottom: 45px;
+    @media screen and (min-width: 481px) {
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: 993px) {
+
+      margin-bottom: 116px;
+    }
+
+    &__foot-text {
+      font-family: Lato, sans-serif;
+      font-size: 0.875em;
+      line-height: 1.31em;
+      text-align: center;
+      color: #A291A5;
+      padding-bottom: 22px;
+      border-bottom: 2px solid #645766;
+      @media screen and (min-width: 481px) {
+        border: none;
+        position: relative;
+        width: 91.6%;
+        margin: 0 auto;
+      }
+      @media screen and (min-width: 993px) {
+        width: 73%;
+        margin: 0 auto;
+      }
+    }
+
+    &__foot-text::after {
+      content: '';
+      @media screen and (min-width: 320px) {
+        position: absolute;
+        top: 95%;
+        left: 14%;
+        width: 72%;
+        border-bottom: 2px solid #645766;
+      }
+    }
+  }
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: 481px) {
+    flex-basis: 42%;
+  }
+  @media screen and (min-width: 993px) {
+    flex-basis: 28.75%;
+  }
+
+  &__logo {
+    margin-bottom: 33px;
+  }
+
+  &__text {
+    font-family: Lato, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}

@@ -1,0 +1,72 @@
+$pricing-width: 257px;
+$index-compression-993: 0.9;
+$grid-column-width-993: $pricing-width * $index-compression-993;
+@mixin grid-center {
+  display: grid;
+  justify-items: center;
+}
+
+.pricing-section {
+  background: url("../../img/Fork_Subscription_Pricing/section_bgc.jpg") no-repeat;
+  transform: translateY(-2px);
+  background-size: cover;
+  padding: 10px 0 90px;
+  @include grid-center;
+
+  &__title {
+    font-family: Montserrat;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ffff;
+    @media screen and (min-width: 320px) and (max-width: 480px){
+      font-size: 1.75em;
+    }
+    @media screen and (min-width: 481px) and (max-width: 992px){
+      font-size: 2.625em;
+    }
+    @media screen and (min-width: 993px) {
+      font-size: 3em;
+    }
+    @media screen and (min-width: 320px) and (max-width: 480px) {
+      margin-bottom: 1em;
+    }
+    @media screen and (min-width: 481px) and (max-width: 992px){
+      margin-bottom: 0.925em;
+    }
+    @media screen and (min-width: 993px) {
+      margin-bottom: 1.3em;
+    }
+  }
+  &__cards {
+    display: grid;
+    align-items: center;
+    @media screen and (min-width: 320px) and (max-width: 480px){
+     grid-template-rows: repeat(4, auto);
+      justify-items: center;
+      row-gap: 1.125em;
+    }
+    @media screen and (min-width: 481px) and (max-width: 992px) {
+      grid-template-columns: 19em 20.3em;
+      grid-template-rows: 29em 35em;
+      row-gap: 1.2em;
+      column-gap: 4%;
+      justify-items: center;
+    }
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      grid-template-columns:repeat(2, $grid-column-width-993 * 1.16);
+      column-gap: 5px;
+    }
+    @media screen and (min-width: 993px) and (max-width: 1099px) {
+      display: inline-grid;
+      grid-template-columns: $grid-column-width-993 $grid-column-width-993 ($grid-column-width-993*1.16) $grid-column-width-993;
+      column-gap: 5px;
+      justify-content: space-around;
+    }
+    @media screen and (min-width: 1100px) {
+      grid-template-columns: $pricing-width $pricing-width ($pricing-width * 1.16) $pricing-width;
+      column-gap: 1%;
+      justify-content: space-evenly;
+    }
+  }
+}

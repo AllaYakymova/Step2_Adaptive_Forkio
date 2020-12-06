@@ -1,0 +1,35 @@
+$fsz-12: 12px;
+$border: 1px solid rgba(27,31,35,.15);
+@mixin inline-flex-center {
+    display: inline-flex;
+    align-items: center;
+}
+
+.social {
+@include inline-flex-center;
+    border: $border;
+    border-radius: 6px;
+
+&__button {
+ @include inline-flex-center;
+     padding: 3px 8px;
+     background-color: #f3f4f6;
+     border-top-left-radius: 6px;
+     border-bottom-left-radius: 6px;
+     border-right: $border;
+ }
+&__icon {
+
+ }
+&__action-name {
+     margin-left: 4px;
+     font-size: $fsz-12;
+     font-weight: 700;
+     line-height: 20px;
+ }
+&__count {
+     font-size: $fsz-12;
+     font-weight: 700;
+     padding: 3px 6px;
+ }
+}

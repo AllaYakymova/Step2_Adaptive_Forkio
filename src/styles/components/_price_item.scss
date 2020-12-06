@@ -1,0 +1,144 @@
+$main-color: #8D81AC;
+$card-text: #ffffff;
+$pricing-width: 257px;
+$pricing-width-special: $pricing-width * 1.16;
+$index-compression-993: 0.9;
+
+@mixin decor-line {
+  content: "";
+  width: 60px;
+  height: 5px;
+  background-color: $main-color;
+}
+
+.pricing {
+    font-family: Montserrat;
+    width: $pricing-width;
+    height: 457px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(100, 87, 107, 0.4);
+    padding-bottom: 36px;
+  &_grid-left {
+    @media screen and (min-width: 481px) and (max-width: 992px) {
+      justify-self: start;
+    }
+  }
+  &:first-child {
+    @media screen and (min-width: 481px) and (max-width: 992px) {
+      justify-self: end;
+    }
+  }
+  &:last-child {
+    @media screen and (min-width: 481px) and (max-width: 992px) {
+      align-self: center;
+    }
+  }
+  @media screen and (min-width: 481px) and (max-width: 600px) {
+    width: $pricing-width * $index-compression-993;
+  }
+  @media screen and (min-width: 993px) and (max-width: 1099px){
+    width: $pricing-width * $index-compression-993;
+  }
+  &_special {
+    width: $pricing-width-special;
+    height: 560px;
+    background-color: rgba(70, 48, 72, 0.4);
+    padding-bottom: 47px;
+    @media screen and (min-width: 481px) and (max-width: 600px) {
+      width: $pricing-width-special * $index-compression-993;
+    }
+    @media screen and (min-width: 993px) and (max-width: 1099px) {
+      width: $pricing-width-special * $index-compression-993;
+    }
+    @media screen and (min-width: 1100px) {
+      width: $pricing-width-special;
+    }
+  }
+
+  &__category {
+    padding: 36px 0;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $card-text;
+    width: 100%;
+    background-color: rgba(162, 145, 165, 0.3);
+
+    &_special {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 43px 0;
+      margin-bottom: 14px;
+    }
+  }
+  &__price {
+    font-size: 3.75em;
+    font-weight: 700;
+    color: $card-text;
+    margin-bottom: 20px;
+
+    &_special {
+      font-size: 5.125em;
+    }
+  }
+
+  &__deco {
+    font-size: 0.875em;
+    text-transform: uppercase;
+    color: $card-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:after {
+      @include decor-line;
+      margin: 38px 0 30px;
+    }
+
+    &_special {
+      &:after {
+        @include decor-line;
+        margin: 46px 0 40px;
+      }
+    }
+  }
+  &__advantages {
+    font-size: 1em;
+    margin-bottom: 37px;
+    color: $card-text;
+    line-height: 1.5;
+    text-align: center;
+    &:first-child {
+      margin-bottom: 63px;
+    }
+
+    &_special {
+      margin-bottom: 83px;
+    }
+  }
+}
+
+
+.btn-purchase {
+  background-color: rgba(162, 145, 165, 0.3);
+  width: 163px;
+  padding: 13px 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: $card-text;
+  border: 1px solid transparent;
+  border-radius: 45px;
+  &_special {
+    width: 190px;
+    padding: 15px 0;
+    font-size: 16px;
+  }
+}
+
+.normal-fw {
+  font-weight: 400;
+}
